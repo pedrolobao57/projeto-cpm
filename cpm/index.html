@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-text-geometry-component@1.0.0/dist/aframe-text-geometry-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity position="0 0 10">
+        <a-camera wasd-controls-enabled="true" look-controls></a-camera>
+      </a-entity>
+
+      <a-assets>
+        <img id="skyTexture" src="textures/clouds-sky-horizontal-shot.jpg" />
+        <img id="waterTexture" src="textures/summer_background_47_a.jpg" />
+        <a-asset-item id="libraryModel" src="assets/library.glb"></a-asset-item>
+      </a-assets>
+
+      <a-text
+        value="Learn Leap"
+        color="#2286FF"
+        side="double"
+        look-at="a-camera"
+        position="-7 10 -10"
+        rotation="0 0 0"
+        scale="15 15 15"
+      >
+      </a-text>
+
+      <a-gltf-model
+        src="assets/Teacher.glb"
+        position="4 .1 -11.5"
+        rotation="0 30 0"
+        scale="0.07 0.07 0.07"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Student1.glb"
+        position="5.05 .1 -9.75"
+        rotation="0 180 0"
+        scale="0.2 0.2 0.2"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Student2.glb"
+        position="4.13 .08 -8.8"
+        rotation="0 175 0"
+        scale="0.2 0.2 0.2"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Student3.glb"
+        position="5 .05 -10.75"
+        rotation="0 185 0"
+        scale="0.18 0.18 0.18"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Island3.glb"
+        position="-30 10 -40"
+        scale="10 10 10"
+        rotation="0 260 0"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Classroom.glb"
+        position="5 .2 -10"
+        rotation="-1 -15 2"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Lounge Chair.glb"
+        position="-4 0 -13"
+        rotation="0 15 0"
+        scale="1.5 1.5 1.5"
+
+      ></a-gltf-model>
+
+      <a-entity
+        gltf-model= "#libraryModel"
+        position="-5 0 -15"
+        rotation="0 0 0"
+      ></a-entity>
+
+      <a-gltf-model
+        src="assets/bookcase.glb"
+        position="-6 0 -12"
+        rotation="0 0 0"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Desk.glb"
+        position="0 0 9"
+        rotation="0 90 0"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Island.glb"
+        position="20 -1 -20"
+        rotation="0 -30 0"
+        scale="0.3 0.3 0.3"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="assets/Island2.glb"
+        position="-20 -0.4 0"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+      ></a-gltf-model>
+
+      <!-- Luzes -->
+      <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+      <a-entity
+        light="type: directional; intensity: 1"
+        position="1 3 1"
+      ></a-entity>
+
+      <!-- Ilha (formato Learn Leap logo) -->
+
+      <!--Primeiro L-->
+      <a-plane
+        position="5 0 -5"
+        rotation="-90 0 0"
+        width="5"
+        height="21"
+        color="#deb887"
+      ></a-plane>
+
+      <a-plane
+        position="-4 0 1"
+        rotation="-90 0 0"
+        width="5"
+        height="21"
+        color="#deb887"
+      ></a-plane>
+
+      <!--Segundo L-->
+      <a-plane
+        position="0 0 -13"
+        rotation="-90 90 0"
+        width="5"
+        height="13"
+        color="#deb887"
+      ></a-plane>
+
+      <a-plane
+        position="1 0 9"
+        rotation="-90 90 0"
+        width="5"
+        height="13"
+        color="#deb887"
+      ></a-plane>
+
+      <!-- Água (plano azul em volta da ilha) -->
+      <a-plane
+        rotation="-90 0 0"
+        width="500"
+        height="500"
+        src="#waterTexture"
+        position="0 -0.15 -5"
+        material="repeat: 50 50; wrap: repeat; shader: flat"
+      >
+      </a-plane>
+
+      <!-- Céu -->
+      <a-sky src="#skyTexture" rotation="0 -90 0"></a-sky>
+    </a-scene>
+  </body>
+</html>
